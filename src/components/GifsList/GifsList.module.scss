@@ -1,0 +1,9 @@
+.title {
+  font-size: 1.5em;
+  font-weight: 600;
+}
+.gifs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  gap: 1rem;
+}
