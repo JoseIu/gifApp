@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import getGifsFetch from '../../helpers/getGifs';
+import useGifs from '../../hooks/useGifs';
 import style from './AddCategory.module.scss';
 
 interface AddCategoryProps {
@@ -8,11 +10,18 @@ interface AddCategoryProps {
 const AddCategory = ({ onNewCategory }: AddCategoryProps) => {
   const [inputvalue, setInputvalue] = useState('');
 
-  const handleSudmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const { setGifs, setLoading } = useGifs();
+
+  const handleSudmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     if (inputvalue.trim().length <= 1) return;
     onNewCategory(inputvalue);
+
+    setLoading();
+    const gifs = await getGifsFetch(inputvalue);
+    setGifs(gifs);
+
     setInputvalue('');
   };
 
