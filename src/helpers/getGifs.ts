@@ -1,5 +1,5 @@
-import { Gif } from '../components/interfaces/gif.interface';
-import { ResponseGifs } from '../components/interfaces/responseGifs.interface';
+import { Gif } from '../interfaces/gif.interface';
+import { ResponseGifs } from '../interfaces/responseGifs.interface';
 
 const getGifsFetch = async (category: string): Promise<Gif[]> => {
   const API_KEY = import.meta.env.VITE_API_KEY;

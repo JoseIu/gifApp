@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Gif } from '../components/interfaces/gif.interface';
 import getGifsFetch from '../helpers/getGifs';
+import { Gif } from '../interfaces/gif.interface';
 
 interface GifsFetch {
   gifs: Gif[];

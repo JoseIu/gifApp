@@ -1,4 +1,4 @@
-import { Gif } from '../interfaces/gif.interface';
+import { Gif } from '../../interfaces/gif.interface';
 import style from './GifCard.module.scss';
 
 interface GifCardProps {
