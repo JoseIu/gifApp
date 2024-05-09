@@ -1,7 +1,5 @@
-import { useEffect, useState } from 'react';
-import getGifsFetch from '../../helpers/getGifs';
+import { useFetchGifs } from '../../hooks/useFetchGifs';
 import GifCard from '../GifCard/GifCard';
-import { Gif } from '../interfaces/gif.interface';
 import style from './GifsList.module.scss';
 
 interface GifsListProps {
@@ -9,16 +7,9 @@ interface GifsListProps {
 }
 
 const GisfsList = ({ category }: GifsListProps) => {
-  const [gifs, setGifs] = useState<Gif[]>();
+  const { gifs, isLoading } = useFetchGifs(category);
 
-  const getGifs = async () => {
-    const gifsData = await getGifsFetch(category);
-    setGifs(gifsData);
-  };
-
-  useEffect(() => {
-    getGifs();
-  }, []);
+  if (isLoading) return <p>Loading...</p>;
   return (
     <div>
       <h2 className={style.title}>{category}</h2>
