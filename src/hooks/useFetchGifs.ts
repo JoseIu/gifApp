@@ -7,7 +7,7 @@ interface GifsFetch {
   isLoading: boolean;
 }
 
-export const useFetchGifs = (category: string) => {
+export const useFetchGifs = (searchTerm: string) => {
   const [gifsState, setGifsState] = useState<GifsFetch>({
     gifs: [],
     isLoading: true,
@@ -15,14 +15,13 @@ export const useFetchGifs = (category: string) => {
 
   const setGifs = (gifs: Gif[]) => setGifsState({ gifs, isLoading: false });
 
-  const getGifs = async () => {
-    const gifsData = await getGifsFetch(category);
-    setGifs(gifsData);
-  };
-
   useEffect(() => {
+    const getGifs = async () => {
+      const gifsData = await getGifsFetch(searchTerm);
+      setGifs(gifsData);
+    };
     getGifs();
-  }, []);
+  }, [searchTerm]);
 
   return {
     gifs: gifsState.gifs,
