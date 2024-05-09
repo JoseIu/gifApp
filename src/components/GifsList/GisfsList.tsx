@@ -1,20 +1,15 @@
-import { useFetchGifs } from '../../hooks/useFetchGifs';
+import useGifs from '../../hooks/useGifs';
 import GifCard from '../GifCard/GifCard';
 import style from './GifsList.module.scss';
 
-interface GifsListProps {
-  searchTerm: string;
-}
-
-const GisfsList = ({ searchTerm }: GifsListProps) => {
-  console.log(searchTerm);
-  const { gifs, isLoading } = useFetchGifs(searchTerm);
-  console.log(gifs);
+const GisfsList = () => {
+  const { gifs, isLoading } = useGifs();
 
   if (isLoading) return <p>Loading...</p>;
+
   return (
     <div>
-      <h2 className={style.title}>{searchTerm}</h2>
+      {gifs.length ? <h2 className={style.title}>Results</h2> : 'Write something to search'}
 
       <div className={style.gifs}>
         {gifs.map((gif) => (
