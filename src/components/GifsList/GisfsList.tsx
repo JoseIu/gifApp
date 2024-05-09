@@ -3,19 +3,21 @@ import GifCard from '../GifCard/GifCard';
 import style from './GifsList.module.scss';
 
 interface GifsListProps {
-  category: string;
+  searchTerm: string;
 }
 
-const GisfsList = ({ category }: GifsListProps) => {
-  const { gifs, isLoading } = useFetchGifs(category);
+const GisfsList = ({ searchTerm }: GifsListProps) => {
+  console.log(searchTerm);
+  const { gifs, isLoading } = useFetchGifs(searchTerm);
+  console.log(gifs);
 
   if (isLoading) return <p>Loading...</p>;
   return (
     <div>
-      <h2 className={style.title}>{category}</h2>
+      <h2 className={style.title}>{searchTerm}</h2>
 
       <div className={style.gifs}>
-        {gifs?.map((gif) => (
+        {gifs.map((gif) => (
           <GifCard key={gif.id} gif={gif} />
         ))}
       </div>
