@@ -6,7 +6,7 @@ interface GifsFetch {
   gifs: Gif[];
   isLoading: boolean;
 }
-
+//THIS HOOK IS NOT USED IN THE PROJECT(THINKS HOW TO USE IN CONTEXT OR NOT)
 export const useFetchGifs = (searchTerm: string) => {
   const [gifsState, setGifsState] = useState<GifsFetch>({
     gifs: [],
