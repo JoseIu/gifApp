@@ -26,9 +26,9 @@ const AddCategory = ({ onNewCategory }: AddCategoryProps) => {
   };
 
   return (
-    <form onSubmit={handleSudmit}>
+    <form onSubmit={handleSudmit} className={style.form}>
       <input
-        className={style.search}
+        className={style.form__search}
         type="search"
         name="search"
         id="search"
