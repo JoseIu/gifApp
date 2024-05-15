@@ -3,12 +3,18 @@
   border-radius: 0.3rem;
   box-shadow: var(--box-shadow);
   overflow: hidden;
+  outline: 0.0625rem solid #000000;
   &__img {
     aspect-ratio: 16/9;
+
+    transition: all 0.3s ease;
+    border-radius: 0.4rem;
+    &:hover {
+      transform: scale(0.92);
+    }
   }
   &__info {
     padding: 1rem;
-    background-color: var(--bg-color-bnt);
     font-weight: 600;
   }
   &__title {

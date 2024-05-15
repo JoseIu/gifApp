@@ -9,7 +9,7 @@ interface AddCategoryProps {
 
 const AddCategory = ({ onNewCategory }: AddCategoryProps) => {
   const [inputvalue, setInputvalue] = useState('');
-
+  //set gifs fetch
   const { setGifs, setLoading } = useGifs();
 
   const handleSudmit = async (event: React.FormEvent<HTMLFormElement>) => {

@@ -1,6 +1,6 @@
 import style from './GifApp.module.scss';
-import AddCategory from './components/AddCategory/AddCategory';
-import GisfsList from './components/GifsList/GisfsList';
+import { AddCategory, GisfsList } from './components';
+
 import { useSearchHistory } from './hooks/useSearchHistory';
 
 const GifApp = () => {
