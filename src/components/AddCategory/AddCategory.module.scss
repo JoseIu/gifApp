@@ -1,14 +1,22 @@
-.search {
-  padding: 0.5rem 1rem;
-  outline: none;
-  border-radius: 0.2rem;
-  background-color: var(--input-bg);
-  border: 1px solid gray;
-  box-shadow: var(--box-shadow);
-  &:focus {
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__search {
+    width: 100%;
+    max-width: 30rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.2rem;
+    border: 1px solid #000;
     background-color: var(--bg-color-bnt);
-  }
-  &::placeholder {
-    color: gray;
+    box-shadow: var(--box-shadow);
+    outline: none;
+    &:focus {
+      background-color: var(--input-bg);
+    }
+    &::placeholder {
+      color: gray;
+      font-weight: 600;
+    }
   }
 }

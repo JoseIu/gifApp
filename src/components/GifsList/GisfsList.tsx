@@ -9,7 +9,11 @@ const GisfsList = () => {
 
   return (
     <div>
-      {gifs.length ? <h2 className={style.title}>Results</h2> : 'Write something to search'}
+      {gifs.length ? (
+        <h2 className={style.title}>Results</h2>
+      ) : (
+        <span className={style.subttile}>Write something to search.... 🐱‍🏍</span>
+      )}
 
       <div className={style.gifs}>
         {gifs.map((gif) => (
